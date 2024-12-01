@@ -1,0 +1,152 @@
+TEST SCENARIOS FOR THE ELIXEUM WEBSITE
+
+---
+TEST SCENARIO 1
+
+ID: 001
+Title: Check format validations for Email on contact form input
+Severity: Medium
+Priority: Low
+Environment: Google Chrome 131.0.6778.86
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/
+2. Click: "Domluvit schůzku"
+3. Fill "Apple" into "Název společnosti"
+4. Fill "John Black" into "Jméno a příjmení"
+4. Fill "00420123123123" into "Mobilní telefón" field.
+5. Fill "a@a" into "E-mailová adresa" field.
+6. Click "Odeslat Štěpánovi" 
+
+Expected result: An email format validation error is returned asking the user to fix the email format, fullfilling basic email rules (including the domain part).
+
+----
+Note: other scenarios can be checking other validations for fields - expecting correct phone format, expecting letter characters for name, etc. Also checking other inputs for email.
+
+---
+TEST SCENARIO 2
+
+ID: 002
+Title: Check contact form functionality (message passes)
+Severity: High
+Priority: Medium
+Environment: Google Chrome 131.0.6778.86
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/
+2. Click: "Domluvit schůzku"
+3. Fill "Apple" into "Název společnosti"
+4. Fill "John Black" into "Jméno a příjmení"
+4. Fill "00420123123123" into "Mobilní telefón" field.
+6. Fill "john@black.com" into "E-mailová adresa" field.
+7. Fill "Hello" into "Co byste chtěli řešit?"
+7. Click "Odeslat Štěpánovi"
+
+Expected result: The message arrived to the right destination (predefined email or database).
+
+---
+TEST SCENARIO 3
+
+ID: 003
+Title: Check "Smart Network" link
+Severity: Low
+Priority: Low
+Environment: Google Chrome 131.0.6778.86
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/
+2. Schroll down to "Smart Network" logo.
+3. Click on "Smart Network" logo.
+
+Expected result: https://www.smart-network.cz/ opens in new tab
+
+---
+FURTHER TESTING IDEAS
+
+- check all buttons and links on webpage being directed to the right destination
+- check clicking on "Elixeum" logo top left returns user to home page from all pages
+- check "Domluvit schůzku" button works on all pages, and returns to current page when contact form is cancelled.
+- check all pages have reasonable text including less key pages like "Ochrana osobních údajů"
+- check character limits for input field like "name", "email" or "message". Try to input more characters and expect fail.
+- all pages have dynamic design adjusted to various screen widths (incl. mobile phones)
+- check functionality on all key browsers
+- loading times for pages are ok
+- nothing is failing in network traffic when passing through the website 
+
+
+//////
+CZECH TRANSLATION BELOW:
+//////
+
+
+TESTOVACÍ SCÉNÁŘE PRO WEB ELIXEUM
+
+---
+TESTOVACÍ SCÉNÁŘ 1
+
+ID: 001
+Název: Kontrola validací formátu pro e-mail ve vstupním poli kontaktního formuláře
+Závažnost: Střední
+Priorita: Nízká
+Prostředí: Google Chrome 131.0.6778.86
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/
+2. Klikněte na: "Domluvit schůzku"
+3. Vyplňte "Apple" do pole "Název společnosti"
+4. Vyplňte "John Black" do pole "Jméno a příjmení"
+5. Vyplňte "00420123123123" do pole "Mobilní telefón"
+6. Vyplňte "a@a" do pole "E-mailová adresa"
+7. Klikněte na "Odeslat Štěpánovi"
+
+Očekávaný výsledek: Vrátí se chyba validace formátu e-mailu, která uživatele vyzve k opravě formátu e-mailu, splňující základní pravidla e-mailu (včetně části domény).
+
+Poznámka: Další scénáře mohou kontrolovat jiné validace pro pole - očekávání správného formátu telefonního čísla, očekávání znaků pro jméno atd. Také kontrola jiných vstupů pro e-mail.
+
+---
+TESTOVACÍ SCÉNÁŘ 2
+ID: 002
+Název: Kontrola funkčnosti kontaktního formuláře (zpráva prochází)
+Závažnost: Vysoká
+Priorita: Střední
+Prostředí: Google Chrome 131.0.6778.86
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/
+2. Klikněte na: "Domluvit schůzku"
+3. Vyplňte "Apple" do pole "Název společnosti"
+4. Vyplňte "John Black" do pole "Jméno a příjmení"
+5. Vyplňte "00420123123123" do pole "Mobilní telefón"
+6. Vyplňte "john@black.com" do pole "E-mailová adresa"
+7. Vyplňte "Hello" do pole "Co byste chtěli řešit?"
+8. Klikněte na "Odeslat Štěpánovi"
+
+Očekávaný výsledek: Zpráva dorazí na správné místo (předem definovaný e-mail nebo databáze).
+
+---
+TESTOVACÍ SCÉNÁŘ 3
+ID: 003
+Název: Kontrola odkazu "Smart Network"
+Závažnost: Nízká
+Priorita: Nízká
+Prostředí: Google Chrome 131.0.6778.86
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/
+2. Sjeďte dolů k logu "Smart Network".
+3. Klikněte na logo "Smart Network".
+
+Očekávaný výsledek: Otevře se https://www.smart-network.cz/ v novém panelu.
+
+---
+DALŠÍ NÁPADY NA TESTOVÁNÍ
+
+- zkontrolovat všechny tlačítka a odkazy na webu, zda směřují na správné místo
+- zkontrolovat, zda kliknutí na logo "Elixeum" vlevo nahoře vrátí uživatele na domovskou stránku ze všech stránek
+- zkontrolovat, zda tlačítko "Domluvit schůzku" funguje na všech stránkách a vrací se na aktuální stránku, když je kontaktní formulář zrušen
+- zkontrolovat, zda všechny stránky obsahují rozumný text včetně méně důležitých stránek jako "Ochrana osobních údajů"
+- zkontrolovat limity znaků pro vstupní pole jako "jméno", "e-mail" nebo "zpráva". Zkusit zadat více znaků a očekávet chybu
+- všechny stránky mají dynamický design přizpůsobený různým šířkám obrazovek (včetně mobilních telefonů)
+- zkontrolovat funkčnost na všech hlavních prohlížečích
+- časy načítání stránek jsou v pořádku
+- při procházení webem nedochází k žádným chybám v síťovém provozu

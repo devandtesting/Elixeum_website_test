@@ -1,0 +1,202 @@
+BUG REPORTS FOR THE ELIXEUM WEBSITE
+
+---
+BUG 1
+Title: Validations for email and mobile input in the contact form not correctly set
+Severity: Low
+Priority: Low
+Environment: Google Chrome 131.0.6778.86
+Time tested: 17:05, 30.11.2024
+Reported by: J.V.
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/
+2. Click: "Domluvit schůzku"
+3. Fill random input into "Název společnosti"
+4. Fill random input into "Jméno a příjmení"
+4. Fill "a" or "%" into "Mobilní telefón" field.
+5. Click tab
+6. Fill "a@a" into "E-mailová adresa" field.
+7. Click "Odeslat Štěpánovi" 
+
+Actual result: there is no validation error response for mobile input being "a" or "%", nor for email input being "a@a".
+Expected result: the mobile field only accepts numbers (maybe also "+" at the beginning of the string). The email field requires a "." inside the domain part of the email address, with a character before and after.
+
+Note 1: In theory an email address can exist without a dot after the @ symbol, but it's more practical to expect a standard email address for contact.
+Note 2: The "Název společnosti" and "Jméno a příjmení" currently have no validation check and are ok with a "%" input for example, although they are required fields. I would consider making them non-required fields, for example.
+Note 3: No message was sent in the testing process, because the message field was empty.
+
+---
+BUG 2:
+Title: Wrong format of subheading on ERP Page
+Severity: Low
+Priority: Low
+Environment: Google Chrome 131.0.6778.86
+Time tested: 17:10, 30.11.2024
+Reported by: J.V.
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/erp-system
+2. Schroll down to subheading "5. Možnosti nasazení přizpůsobené vaší firmě"
+
+Actual result: Subheading "5. Možnosti nasazení přizpůsobené vaší firmě" is both visibly smaller than other subheadings, but also the HTML code is set wrong (inconsistent with other subheadings). It is set as <p></p> instead of <h3></h3>, like the other subheadings. Screenshot attached in folder ["Bug2_subheading.png"]
+Expected result: Subheading "5. Možnosti nasazení přizpůsobené vaší firmě" has html set to <h3></h3> like other subheadings, instead of <p></p>. The size is visibly consistent to other subheadings.
+
+Note: the "actual result" is the same on browsers Mozilla Firefox and Microsoft Edge
+
+---
+BUG 3:
+Title: Title overlaps with logo on screens with width smaller than 991px
+Severity: Low
+Priority: Medium
+Environment: Google Chrome 131.0.6778.86
+Time tested: 17:15, 30.11.2024
+Reported by: J.V.
+
+Steps to reproduce:
+1. Visit URL: https://www.elixeum.com/evidence-skladu
+2. Decrease screen width to 991px or smaller.
+
+Actual result: Title overlaps with page title in a non-readable way. Screenshot attached in folder ["Bug3_overlap.png"].
+Expected result: Web design is dynamic and adjusts in a readable way to screen width (ex. mobile phones, ipad mini)
+
+Note: This bug is true for all service offer pages including: https://www.elixeum.com/obchod; https://www.elixeum.com/personalistika; etc.
+Note2: the "actual result" is the same on browsers Mozilla Firefox and Microsoft Edge
+
+---
+BUG 4:
+Title: (Optional UX comment) Buttons too small on small mobile phones
+Severity: Low
+Priority: Medium
+Environment: iPhone 8, iOS 16.7.10, Opera browser
+Time tested: 17:20, 30.11.2024
+Reported by: J.V.
+
+Steps to reproduce:
+1. Visit https://www.elixeum.com/#sluzby (on iPhone SE sized phone, screen width 375px)
+
+Actual result: Buttons like "Evidence skladú" are small, hard to read and hard to click for some users.
+Expected result: Button design adjusts better to screen size. They are bigger, more readable, more clickable.
+
+---
+BUG 5:
+Title: (Optional UX comment) All button links open a new tab 
+Severity: Low
+Priority: Low
+Environment: Google Chrome 131.0.6778.86
+Time tested: 17:25, 30.11.2024
+Reported by: J.V.
+
+Steps to reproduce:
+1. Visit https://www.elixeum.com/#sluzby
+2. Click on button "Evidence skladů". (or button "Obchod")
+
+Actual result: button link opens in new tab for all buttons in category ("Evidence skladů", "Obchod", etc.)
+Expected result: buttons open link in same tab by default
+
+Note: automatic opening of links in new tabs is not so typical and can be confusing for some users. If they want to read about more or all services, their browser ends up cluttered with 8 tabs.
+
+
+//////
+CZECH TRANSLATION BELOW:
+//////
+
+
+HLÁŠENÍ CHYB PRO WEB ELIXEUM
+
+---
+CHYBA 1
+Název: Validační chyby u polí pro email a mobilní telefon ve formuláři pro kontakt 
+Závažnost: Nízká 
+Priorita: Nízká 
+Prostředí: Google Chrome 131.0.6778.86 
+Čas testování: 17:05, 30.11.2024 
+Nahlášeno: J.V.
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/
+2. Klikněte na: "Domluvit schůzku"
+3. Vyplňte náhodný vstup do pole "Název společnosti"
+4. Vyplňte náhodný vstup do pole "Jméno a příjmení"
+5. Vyplňte "a" nebo "%" do pole "Mobilní telefón".
+6. Stiskněte tabulátor
+7. Vyplňte "a@a" do pole "E-mailová adresa".
+8. Klikněte na "Odeslat Štěpánovi"
+
+Skutečný výsledek: Není žádná validační chyba pro mobilní vstup "a" nebo "%", ani pro emailový vstup "a@a". 
+Očekávaný výsledek: Pole pro mobilní telefon by mělo přijímat pouze čísla (možná také "+" na začátku řetězce). Pole pro email by mělo vyžadovat tečku v doménové části emailové adresy, s alespoň jedním znakem před tečkou a dvěma znaky za tečkou.
+
+Poznámka 1: Teoreticky může emailová adresa existovat bez tečky po symbolu @, ale je praktičtější očekávat standardní emailovou adresu pro kontakt. 
+Poznámka 2: Pole "Název společnosti" a "Jméno a příjmení" aktuálně nemají žádnou validační kontrolu a přijímají například "%" jako vstup, i když jsou povinná. Zvážil bych jejich nastavení jako nepovinná pole. 
+Poznámka 3: V průběhu testování nebyla odeslána žádná zpráva, protože pole pro zprávu bylo prázdné.
+
+---
+CHYBA 2
+Název: Špatný formát podnadpisu na stránce ERP 
+Závažnost: Nízká 
+Priorita: Nízká 
+Prostředí: Google Chrome 131.0.6778.86 
+Čas testování: 17:10, 30.11.2024 
+Nahlášeno: J.V.
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/erp-system
+2. Srolujte dolů k podnadpisu "5. Možnosti nasazení přizpůsobené vaší firmě"
+
+Skutečný výsledek: Podnadpis "5. Možnosti nasazení přizpůsobené vaší firmě" je viditelně menší než ostatní podnadpisy, a také HTML kód je nastaven špatně (nekonzistentně s ostatními podnadpisy). Je nastaven jako <p></p> místo <h3></h3>, jako ostatní podnadpisy. Screenshot přiložen ve složce ["Bug2_subheading.png"]. 
+Očekávaný výsledek: Podnadpis "5. Možnosti nasazení přizpůsobené vaší firmě" by měl být nastaven v HTML jako <h3></h3>, jako ostatní podnadpisy, místo <p></p>. Velikost by měla být viditelně konzistentní s ostatními podnadpisy.
+
+Poznámka: Stejný "skutečný výsledek" platí i pro prohlížeče Mozilla Firefox a Microsoft Edge.
+
+---
+CHYBA 3
+Název: Titulek překrývá logo na obrazovkách s šířkou menší než 991px 
+Závažnost: Nízká 
+Priorita: Střední 
+Prostředí: Google Chrome 131.0.6778.86 
+Čas testování: 17:15, 30.11.2024 
+Nahlášeno: J.V.
+
+Kroky k reprodukci:
+1. Navštivte URL: https://www.elixeum.com/evidence-skladu
+2. Zmenšete šířku obrazovky na 991px nebo méně.
+
+Skutečný výsledek: Titulek překrývá název stránky nečitelným způsobem. Screenshot přiložen ve složce ["Bug3_overlap.png"]. 
+Očekávaný výsledek: Webový design by měl být dynamický a přizpůsobitelný šířce obrazovky (např. mobilní telefony, iPad mini).
+
+Poznámka: Tato chyba platí pro všechny stránky s nabídkou služeb včetně: https://www.elixeum.com/obchod; https://www.elixeum.com/personalistika; atd. 
+Poznámka 2: Stejný "skutečný výsledek" platí i pro prohlížeče Mozilla Firefox a Microsoft Edge.
+
+---
+CHYBA 4
+Název: (Volitelný UX komentář) Tlačítka jsou příliš malá na malých mobilních telefonech 
+Závažnost: Nízká 
+Priorita: Střední 
+Prostředí: iPhone 8, iOS 16.7.10, Opera browser 
+Čas testování: 17:20, 30.11.2024 
+Nahlášeno: J.V.
+
+Kroky k reprodukci:
+1. Navštivte https://www.elixeum.com/#sluzby (na telefonu velikosti iPhone SE, šířka obrazovky 375px)
+
+Skutečný výsledek: Tlačítka jako "Evidence skladú" jsou malá, těžko čitelná a pro některé uživatele těžko kliknutelná. 
+Očekávaný výsledek: Design tlačítek se lépe přizpůsobí velikosti obrazovky. Jsou větší, čitelnější a lépe klikatelné.
+
+---
+CHYBA 5
+Název: (Volitelný UX komentář) Všechny odkazy na tlačítkách se otevírají v novém panelu 
+Závažnost: Nízká 
+Priorita: Nízká 
+Prostředí: Google Chrome 131.0.6778.86 
+Čas testování: 17:25, 30.11.2024 
+Nahlášeno: J.V.
+
+Kroky k reprodukci:
+1. Navštivte https://www.elixeum.com/#sluzby
+2. Klikněte na tlačítko "Evidence skladů". (nebo tlačítko "Obchod")
+
+Skutečný výsledek: Odkaz na tlačítku se otevře v novém panelu u všech tlačítek v kategorii ("Evidence skladů", "Obchod", atd.) 
+Očekávaný výsledek: Tlačítka by měla otevírat odkaz ve stejném panelu ve výchozím nastavení.
+
+Poznámka: Automatické otevírání odkazů v nových panelech není tak typické a může být matoucí pro některé uživatele. Pokud chtějí číst o více nebo všech službách, jejich prohlížeč je zaplněn 8 panely.
+
